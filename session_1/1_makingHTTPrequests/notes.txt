@@ -1,0 +1,44 @@
+>>JSON stands for Javascript Object Notation and AJAX is Asynchronous Javascript and XML
+>>AJAX is quickly turning to Asynchronous Javascript and Json (AJAJ)
+>>JSON can be parsed and used in any other language that is not
+    javascript.
+>>XHR's are XML Http Requests
+    XHR's are the original way of sending requests via JS
+
+>>An xml request shares characteristics with a class object in that
+    it has methods and is instantiated as well.
+    What you need to get one running is an instance
+    Use the instance to access the 
+      onload method which allows you to
+            choose what to do with the result from the server,
+        the on error method which returns the error value,
+        the open method which takes three parameters:
+            the method, the url and a boolean
+        the send method which you call to get the browser to send the
+            request.
+    Instead of the onload and onerror methods, you can addeventlisteners
+      that await a load or error trigger to run a predefined function.
+    It is key to JSON.parse the result into a format that is easier to reference.
+>>It's possible to chain multiple xmlhr's by keying in the url obtained
+  from the initial XML request in the callback upon successful return
+
+  
+>>Another way to make HTTP requests is to use the fetch method which supports promises thus making it less
+  messy to chain requests.
+>>Fetch requests take 2 parameters:
+    the url and
+    and object with 
+      a header key and (the header is much like the setrequestheader method in the XMLHR)
+      as a value another object with
+         an Accept key 
+         ápplication/json value
+>>One can then use the then block to resolve the result if the promise is resolved and the
+  catch block to handle the error.
+>>Once the promise is resolved, you get the response which then needs to be
+  resolved using the .json() function which also returns a promise that needs
+  to be resolved using another .then block.
+>>If one does not want to nest the .json() resolution, one can just return the promise
+  that is given by the .json() function and handle the result in another .then block.
+>>The fetch never rejects the promise unless the internet has an issue.
+>>Chaining multiple fetch requests is as simple as returning a fetch promise
+  and then handling the result using a .then block
