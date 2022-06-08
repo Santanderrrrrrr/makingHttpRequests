@@ -42,3 +42,11 @@
 >>The fetch never rejects the promise unless the internet has an issue.
 >>Chaining multiple fetch requests is as simple as returning a fetch promise
   and then handling the result using a .then block
+
+
+>>Another method to making html requests is to use the axios library
+>>if one is not using axios via node, one can simply paste the script
+  into the html body as a script but after the script tag referencing
+  the js file in which the axios is being referred to.
+>>Axios does not need a header nor a parser as it does the parsing for you
+>>Axios is promise based as well
