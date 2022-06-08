@@ -37,3 +37,18 @@ fetch('https://icanhazdadjoke.com', {
     console.log('Fetch Error', err)
 })
 
+
+//sample axios request
+axios
+	.get('https://swapi.co/api/planetaslkjdaklsjds/') //BAD URL!
+	.then((res) => {
+		//We don't need to check for a 200 status code, because...
+		//Axios will reject the promise for us, unlike fetch!
+		console.log(res.data);
+	})
+	.catch((err) => {
+		//In this example with a not-found URL, this callback will run...
+		console.log('IN CATCH CALLBACK!!!');
+		console.log(err);
+	});
+
